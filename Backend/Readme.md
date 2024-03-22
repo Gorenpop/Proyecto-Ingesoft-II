@@ -35,3 +35,8 @@ Start local development server
 ```bash
 python manage.py runserver
 ```
+
+comando para veríficar que mi vm si está en funcionamiento
+```bash
+ps aux | grep runserver
+ ```
