@@ -1,4 +1,4 @@
-# Proyecto-Ingesoft-II: Versión II
+# Proyecto-Ingesoft-II
 
 **Descripción:**
 
