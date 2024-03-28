@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+## Readme para el Frontend React + TypeScript + Vite
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**¡Bienvenido al Frontend**
 
-## Available Scripts
+Este proyecto utiliza React, TypeScript y Vite para construir una interfaz de usuario moderna y eficiente. Este Readme te guiará a través de la instalación y configuración del frontend de la aplicación.
 
-In the project directory, you can run:
+**Requisitos previos:**
 
-### `npm start`
+* Tener Node.js y npm (o yarn) instalados en tu sistema.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Herramientas utilizadas:**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* **React:** Librería de JavaScript para construir interfaces de usuario.
+* **TypeScript:** Superconjunto de JavaScript que añade tipado estático.
+* **Vite:** Un bundler rápido y ligero para aplicaciones web modernas.
 
-### `npm test`
+### 1. Clonar el repositorio
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Abre una terminal o símbolo del sistema y navega hasta la carpeta donde deseas clonar el repositorio. Ejecuta el siguiente comando para clonar el repositorio desde GitHub:
 
-### `npm run build`
+```bash
+git clone https://github.com/Gorenpop/Proyecto-Ingesoft-II.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 2. Navegar al directorio frontend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Una vez que el repositorio se haya clonado correctamente, navega hasta el directorio `Frontend` del proyecto:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+cd Frontend
+```
 
-### `npm run eject`
+### 3. Instalar las dependencias
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+El proyecto tiene un archivo `package.json` que lista todas las dependencias necesarias para su funcionamiento.  Ejecuta el siguiente comando para instalar las dependencias:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**O bien:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+yarn install
+```
 
-## Learn More
+Este comando descargará e instalará todas las dependencias necesarias para tu proyecto React con TypeScript y Vite.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 4. Iniciar el servidor de desarrollo
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Para iniciar el servidor de desarrollo de Vite y ver la aplicación en tu navegador web, ejecuta el siguiente comando:
 
-### Code Splitting
+```bash
+npm run dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**O bien:**
 
-### Analyzing the Bundle Size
+```bash
+yarn dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Por defecto, el servidor de desarrollo se ejecuta en la dirección `http://localhost:3000/`. Puedes acceder a tu aplicación abriendo esta dirección en tu navegador web.
 
-### Making a Progressive Web App
+**¡Felicitaciones! Has configurado correctamente el frontend de**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**Desarrollando con TypeScript:**
 
-### Advanced Configuration
+Este proyecto está configurado para utilizar TypeScript y ESLint para la verificación de tipos y el lintado del código. Puedes utilizar un editor de código compatible con TypeScript para aprovechar las ventajas del tipado estático y la autocomplementación de código.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**Recursos adicionales:**
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* **Documentación de React:** [https://legacy.reactjs.org/docs/getting-started.html](https://legacy.reactjs.org/docs/getting-started.html)
+* **Documentación de TypeScript:** [https://www.typescriptlang.org/](https://www.typescriptlang.org/)
+* **Documentación de Vite:** [https://vitejs.dev/](https://vitejs.dev/)
