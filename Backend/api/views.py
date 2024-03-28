@@ -1,45 +1,38 @@
-from django.contrib.auth import authenticate, login
-from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework.exceptions import ValidationError
 from rest_framework import status
-from .serializers import LoginSerializer
-from django.contrib.auth import authenticate, login
-
-@api_view(['POST'])
-def login_view(request):
-    """
-    Maneja las solicitudes POST para el inicio de sesión.
-    """
-    if request.method == 'POST':
-        username = request.data.get('username')
-        password = request.data.get('password')
-    
-        user = authenticate(request, username=username, password=password)  # Autenticar al usuario
-
-        if user is not None:
-            if user.is_active:
-                login(request, user)  # Autentica al usuario
-                return Response({'message': 'Login successful'}, status=status.HTTP_200_OK)
-            else:
-                return Response({'message': 'User is deactivated.'}, status=status.HTTP_400_BAD_REQUEST)
-        else:
-            return Response({'message': 'Invalid username or password.'}, status=status.HTTP_400_BAD_REQUEST)
+from .serializers import TaskSerializer
+from .models import Task
 
 @api_view(['GET'])
-def get_user_data(request):
-    """
-    Obtiene y retorna los datos de todos los usuarios registrados.
-    """
-    users = User.objects.all()  # Consulta todos los usuarios
-    user_data_list = []
+def hello_world(request):
+    tasks = Task.objects.all()  # Obtiene todos los objetos Task
+    serializer = TaskSerializer(tasks, many=True)  # Serializa los objetos
+    return Response(serializer.data)  # Devuelve los datos serializados como parte de la respuesta
 
-    for user in users:
-        user_data = {
-            'id': user.id,
-            'username': user.username,
-            'password': user.password,
-        }
-        user_data_list.append(user_data)
 
-    return Response(user_data_list)
+@api_view(['POST'])
+def create_task(request):
+    data = request.data
+    serializer = TaskSerializer(data=data)
+    try:
+        serializer.is_valid(raise_exception=True)
+    except ValidationError as err:
+        return Response({'message': 'Invalid data', 'errors': err.detail}, status=status.HTTP_400_BAD_REQUEST)
+    task = serializer.save()
+    return Response(serializer.data)
+
+@api_view(['DELETE'])
+def delete_task(request, pk):
+    try:
+        task = Task.objects.get(pk=pk)
+        task.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+    except Task.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    
+@api_view(['GET'])
+def home(request):
+    return Response(status=status.HTTP_204_NO_CONTENT)
