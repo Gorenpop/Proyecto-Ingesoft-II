@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['34.16.192.3',
                  '127.0.0.1',
+                 'localhost',
+                 'localhost:3000',
                  ]
 
 
@@ -57,8 +59,29 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
+
 CORS_ALLOW_ALL_ORIGINS = True  # Esto permite todas las peticiones, pero es menos seguro.
 
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
 
 ROOT_URLCONF = 'main.urls'
 
@@ -95,7 +118,14 @@ DATABASES = {
 
     }
 }
-
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
