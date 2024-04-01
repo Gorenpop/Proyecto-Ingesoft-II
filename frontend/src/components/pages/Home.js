@@ -9,20 +9,17 @@ import {
   MenuItem,
   Toolbar,
   Typography,
-  Tooltip,
   useScrollTrigger,
-  Avatar
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import AdbIcon from '@mui/icons-material/Adb';
 import {useNavigate} from 'react-router-dom';
-
+import AccountCircle from '@mui/icons-material/AccountCircle';
 const Home = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
   const navigate = useNavigate();
   const pages = ['Inicio', 'Productos', 'Servicios', 'Contacto'];
-  const settings = ['Configuración', 'Perfil', 'Cerrar sesión'];
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -50,10 +47,12 @@ const Home = () => {
     <Box>
       <AppBar
         position="fixed"
-        style={{
+        style={{  
+          backgroundColor: "#072E33",
           width: '100%',
           top: 0,
           boxShadow: trigger ? '0px 1px 5px 0px rgba(0, 0, 0, 0.3)' : 'none',
+          
         }}
       >
         <Container maxWidth="xl">
@@ -142,37 +141,22 @@ const Home = () => {
               ))}
             </Box>
             <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
-                <div>
-                  <Box sx={{ display: 'flex', alignItems: 'center', margin: '0 10px' }}>
-                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                      <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                    </IconButton>
-                  </Box>
-                </div>
-              </Tooltip>
-              <Menu
-                sx={{ mt: '45px' }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
+              <Button
+                onClick={handleOpenUserMenu}
+                startIcon={<AccountCircle />}
+                variant="outlined"
+                color="secondary"
+                size="medium"
+                sx={{
+                  borderColor: 'white',
+                  color: 'white',
+                  '&:hover': {
+                    backgroundColor: 'transparent',
+                  },
                 }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
               >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
+                Iniciar Sesión
+              </Button>
             </Box>
             {/* Añade aquí tu componente ButtonTheme si es necesario */}
           </Toolbar>
