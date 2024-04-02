@@ -13,12 +13,12 @@ python -m venv env
 ```
 Activa el entorno virtual, esto va adepender de la plataforma que uses para sistemas basdos en UNIX usa:
 ```bash
-source env/Scripts/activate
+env\Scripts\activate 
 ```
 
 Install dependencies
 ```bash
-pip install -r requirements.txt
+pip install -r requeriments.txt
 ```
 
 Run migrations in local sqlite database
@@ -42,8 +42,7 @@ ps aux | grep runserver
 ```
 para pararse y activar el env de mi vm
 ```bash
-fmurciam@instance-20240322-054228:~/Proyecto-Ingesoft-II$ source env/bin/activate
-(env) fmurciam@instance-20240322-054228:~/Proyecto-Ingesoft-II$ 
+source env/bin/activate
 ```
 para activar la vm a través de tmux
 ```bash

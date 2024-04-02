@@ -46,7 +46,7 @@ const Home = () => {
   return (
     <Box>
       <AppBar
-        position="fixed"
+        
         style={{  
           backgroundColor: "#072E33",
           width: '100%',
