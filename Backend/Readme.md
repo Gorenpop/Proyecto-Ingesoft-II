@@ -50,3 +50,8 @@ tmux
 cd ~/Proyecto-Ingesoft-II/Backend
 $(which python) manage.py runserver 0.0.0.0:8000
 ```
+```bash
+intenta ejecutar el comando freeze correctamente para generar o actualizar el archivo requirements.txt:
+pip freeze > requirements.txt
+
+```
