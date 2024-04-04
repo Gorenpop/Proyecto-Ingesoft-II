@@ -1,8 +1,7 @@
 import React from 'react';
 import './LoginForm.css';
 import { FaUser,FaLock  } from "react-icons/fa";
-// se inicializa con npm star en login
-// 
+
 const LoginForm = () => {
     return (
         <div className='wrapper'>
@@ -21,13 +20,21 @@ const LoginForm = () => {
 
                 <div className="remember-forgot">
                     <label><input type="checkbox" />Recuerdame</label>
-                    <a href='#'>¿Olvidaste tu contraseña?</a>
+                    <a href='#forgot-password'>¿Olvidaste tu contraseña?</a>
                 </div>
                 <button type="submit">Login</button>
-                <div className="register-link">
-                    <p>¿Aún no tienes cuenta?<a href='#'>  Registrarme</a></p>
+                <div className="register-link" id="register-link">
+                    <p>¿Aún no tienes cuenta?<a href='#register'>  Registrarme</a></p>
                 </div>
             </form>
+
+            <div id="forgot-password">
+                {/* Forgot Password Content */}
+            </div>
+
+            <div id="register">
+                {/* Register Content */}
+            </div>
 
         </div>
     );

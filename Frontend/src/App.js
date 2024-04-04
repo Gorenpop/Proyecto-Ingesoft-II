@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/pages/Home';
+import Home from './components/pages/Home.tsx';
 import LoginForm from './components/LoginForms/LoginForms';
 import RegisterForm from './components/RegisterForms/RegisterForm';
 
@@ -10,7 +10,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/LoginForm" element={<LoginForm />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/Home" element={<Home />} />
+        <Route path="/RegisterForm" element={<RegisterForm />} />
       </Routes>
     </Router>
   );
