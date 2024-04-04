@@ -15,7 +15,8 @@ class Navbar extends Component {
             <nav className="NavbarItems">
                 <Link className="nav-link-logo" to="/">
                     <div className="logoContainer">
-                        <img src={logo} alt="Logo" />                        <h1 className="navbar-logo" >Compostify</h1>
+                        <img src={logo} alt="Logo" />
+                        <h1 className="navbar-logo" >Compostify</h1>
                     </div>
                 </Link>
                 <div className="menu-icons" onClick=

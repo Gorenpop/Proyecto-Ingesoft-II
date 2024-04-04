@@ -1,0 +1,154 @@
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    margin-left: 30px;
+    margin-right: 30px;
+
+}
+
+.profile-container {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+    width: 100%;
+
+}
+
+.profile-container .main-panel {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    position: relative;
+}
+
+.profile-container .main-panel .avatar-panel {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.profile-container .main-panel .avatar-panel .user-avatar {
+    position: relative;
+    width: 120px;
+}
+
+.avatar img {
+    border-radius: 100%;
+    height: 100%;
+    transition: .2s;
+    width: 100%;
+}
+
+.profile-container .main-panel .avatar-panel .user-avatar:after {
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.profile-container .main-panel .avatar-panel .user-links {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+
+.profile-container .main-panel .avatar-panel .user-links .title {
+    align-items: center;
+    display: flex;
+    margin: 7.5px;
+}
+
+.profile-container .main-panel .avatar-panel .user-links .title .user-nickname {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 30px;
+    color: #6BA2A9;
+}
+
+.profile-container .main-panel .avatar-panel .user-links .ig-profile-info-date {
+    color: #0C7078;
+    margin: 7.5px;
+}
+
+.separator {
+    height: 60px;
+}
+
+.profile-container .user-profile-tabs .fa-solid {
+    margin-top: 2px;
+    color: #6BA2A9;
+}
+
+.profile-container .user-profile-tabs {
+    box-shadow: 0 1px 0 0 hsla(0, 0%, 100%, .1);
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+
+}
+
+li {
+    list-style: none;
+}
+
+.profile-tab-links {
+    color: #6BA2A9;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    align-items: center;
+    display: flex;
+    padding: 0 15px 20px;
+    white-space: nowrap;
+
+}
+
+.profile-container .user-profile-tabs li.settings {
+    margin-left: auto;
+
+}
+
+.profile-container .user-profile-tabs li {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    position: relative;
+}
+
+
+
+.profile-container .user-profile-tabs li a {
+    text-decoration: none;
+}
+
+.profile-container .user-profile-tabs li a.active,
+.profile-container .user-profile-tabs li a:hover,
+.profile-container .user-profile-tabs li:last-of-type a {
+    color: #0C7078;
+}
+
+.profile-container .user-profile-tabs li:last-of-type a {
+    padding-right: 0;
+    color: #6BA2A9;
+}
+
+.profile-container .user-profile-tabs li a {
+    align-items: center;
+    display: flex;
+    font-weight: 700;
+    padding: 0 15px 20px;
+    white-space: nowrap;
+}
+
+.profile-container .user-profile-tabs li a:hover {
+    color: #0C7078;
+}

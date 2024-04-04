@@ -1,5 +1,11 @@
 export const MenuItems = [
     {
+        title: "Cuenta",
+        url: "/profile",
+        cName: "nav-links",
+        icon: "fa-solid fa-user"
+    },
+    {
         title: "Productos",
         url: "/products",
         cName: "nav-links",

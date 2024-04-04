@@ -1,13 +1,14 @@
 import Navbar from '../pages/Navbar';
-function Productos() {
+
+function Editar() {
     return (
         <>
             <Navbar />
             <div className='pageContainer'>
-                <h1>pagina de productos</h1>
+                <h1>pagina de editar</h1>
             </div>
         </>
     )
 }
 
-export default Productos;
+export default Editar;

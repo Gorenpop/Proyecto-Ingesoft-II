@@ -1,10 +1,26 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .App {
     font-family: sans-serif;
     text-align: center;
+
+}
+
+body {
+    background: #05161A;
+    font-family: barlow, arial, sans-serif;
+    font-weight: 400;
+}
+
+.pageContainer {
+    align-items: center;
+    padding: 200px;
+    color: white;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    position: relative;
 }

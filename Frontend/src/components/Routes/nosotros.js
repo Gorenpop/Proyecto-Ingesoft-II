@@ -4,7 +4,9 @@ function Nosotros() {
     return (
         <>
             <Navbar />
-            <h1>estos somos nosotros</h1>
+            <div className='pageContainer'>
+                <h1>pagina de nosotros</h1>
+            </div>
         </>
     )
 }

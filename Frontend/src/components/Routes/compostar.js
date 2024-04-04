@@ -4,7 +4,10 @@ function Compostar() {
     return (
         <>
             <Navbar />
-            <h1>vamos a compostar</h1>
+            <div className='pageContainer'>
+                <h1>vamos a compostar</h1>
+            </div>
+
         </>
     )
 }
