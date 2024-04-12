@@ -3,8 +3,9 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.exceptions import ValidationError
 from rest_framework import status
-from .serializers import TaskSerializer
+from .serializers import TaskSerializer,UserSerializer
 from .models import Task
+from rest_framework.views import APIView
 
 @api_view(['GET'])
 def hello_world(request):
@@ -36,3 +37,11 @@ def delete_task(request, pk):
 @api_view(['GET'])
 def home(request):
     return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class RegisterView(APIView):
+    def post(self,request):
+        serializer = UserSerializer(data = request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)

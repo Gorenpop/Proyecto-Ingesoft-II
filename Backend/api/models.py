@@ -1,9 +1,10 @@
 from django.db import models
+from django.contrib.auth.models import AbstractBaseUser
 
-class User(models.Model):
-    idUser = models.IntegerField()
-    username = models.CharField(max_length=100)
-    email = models.CharField(max_length=255)
+class User(AbstractBaseUser):
+    username = None
+    id = models.IntegerField(primary_key=True)
+    email = models.CharField(max_length=255, unique = True)
     first_name = models.CharField(max_length = 255)
     second_name = models.CharField(max_length=255)
     isBuyer = models.BooleanField(default = False)
@@ -13,11 +14,16 @@ class User(models.Model):
     lastSession = models.DateTimeField(auto_now_add=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    USERNAME_FIELD= 'email'
+    REQUIRED_FIELDS = []
+
     def __str__(self):
-        return self.idUser
+        return self.id
+
+
     
 class order(models.Model):
-    idOrder = models.IntegerField()
+    idOrder = models.IntegerField(primary_key=True)
     idBuyer = models.ForeignKey(User, on_delete=models.CASCADE)
     quality = models.CharField(max_length = 255)
     amount = models.IntegerField()
@@ -28,8 +34,9 @@ class order(models.Model):
     def __str__(self):
         return self.idOrder
 
+    
 class recolection(models.Model):
-    idRecolection = models.IntegerField()
+    idRecolection = models.IntegerField(primary_key=True)
     date = models.DateTimeField()
     place = models.CharField(max_length = 255)
     owner = models.CharField(max_length = 255)
