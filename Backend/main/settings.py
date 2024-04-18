@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'api',
     'corsheaders',
     'rest_framework',
-    'tempapp',
 
 ]
 
@@ -112,11 +111,11 @@ WSGI_APPLICATION = 'main.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Main',
-        'USER':  'root',
-        'PASSWORD':  '1234',
-        'HOST':  '127.0.0.1',
-        'PORT':  '3306',
+        'NAME': 'bpryf1feejt7jlio04nj',
+        'USER':  'unrqrrmtp5z92kzn',
+        'PASSWORD':  'Ti8xnSBbwiS23iyfPVsg',
+        'HOST':  'bpryf1feejt7jlio04nj-mysql.services.clever-cloud.com',
+        'PORT':'',
 
     }
 }
