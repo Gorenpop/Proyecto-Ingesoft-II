@@ -130,7 +130,6 @@ button:hover {
         font-size: 1.2rem;
         padding: 2rem 0;
         margin-top: 2rem;
-        /* Adjust the top padding to move the links down */
     }
 
     .nav-links:hover {

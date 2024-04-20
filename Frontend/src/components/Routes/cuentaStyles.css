@@ -85,11 +85,10 @@
 
 .profile-container .user-profile-tabs .fa-solid {
     margin-top: 2px;
-    color: #6BA2A9;
 }
 
 .profile-container .user-profile-tabs {
-    box-shadow: 0 1px 0 0 hsla(0, 0%, 100%, .1);
+    box-shadow: 0 1px 0 0 #0C707870;
     display: flex;
     justify-content: space-between;
     width: auto;
@@ -109,7 +108,6 @@ li {
     display: flex;
     padding: 0 15px 20px;
     white-space: nowrap;
-
 }
 
 .profile-container .user-profile-tabs li.settings {
@@ -124,18 +122,6 @@ li {
     position: relative;
 }
 
-
-
-.profile-container .user-profile-tabs li a {
-    text-decoration: none;
-}
-
-.profile-container .user-profile-tabs li a.active,
-.profile-container .user-profile-tabs li a:hover,
-.profile-container .user-profile-tabs li:last-of-type a {
-    color: #0C7078;
-}
-
 .profile-container .user-profile-tabs li:last-of-type a {
     padding-right: 0;
     color: #6BA2A9;
@@ -147,8 +133,68 @@ li {
     font-weight: 700;
     padding: 0 15px 20px;
     white-space: nowrap;
+    text-decoration: none;
 }
 
 .profile-container .user-profile-tabs li a:hover {
+    color: #0C7078;
+}
+
+
+.user-profile-settings {
+    display: flex;
+}
+
+.user-profile-settings .user-profile-settings-tabs {
+    border-right: 1px solid #0C707870;
+    display: flex;
+    flex-direction: column;
+    margin: -15px 60px -15px -15px;
+}
+
+.user-profile-settings .user-profile-settings-tabs li {
+    margin: 15px;
+    position: relative;
+
+}
+
+.user-profile-settings .user-profile-settings-tabs li a {
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+}
+
+.user-profile-settings .user-profile-settings-tabs li a:hover {
+    color: #0C7078;
+}
+
+
+.user-profile-settings .user-profile-settings-tabs li a .lines {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    width: 100%;
+}
+
+.user-profile-settings .user-profile-settings-tabs li a .fa-solid {
+    margin-right: 20px;
+}
+
+
+.user-profile-settings .user-profile-settings-tabs li a .lines .title {
+    color: #6BA2A9;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 3px;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+}
+
+.user-profile-settings .user-profile-settings-tabs li a .lines .title:hover {
+    color: #0C7078;
+}
+
+.user-profile-settings .user-profile-settings-tabs li a .lines span:not(.title) {
     color: #0C7078;
 }
