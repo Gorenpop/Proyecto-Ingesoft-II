@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 //Components
-import Home from './components/pages/Home.tsx';
+import Home from './components/Routes/Home';
 import Compostar from './components/Routes/compostar';
 import Nosotros from './components/Routes/nosotros';
 import Productos from './components/Routes/productos';
@@ -22,7 +22,7 @@ const App = () => {
         <Route path="/products" element={<Productos />} />
         <Route path="/LoginForm" element={<LoginForm />} />
         <Route path="/RegisterForm" element={<RegisterForm />} />
-        <Route path="/user-profile-settings" element={<Cuenta />} />
+        <Route path="/profile/user-profile" element={<Cuenta />} />
       </Routes >
     </div >
   );

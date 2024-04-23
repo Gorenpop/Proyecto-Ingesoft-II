@@ -88,7 +88,7 @@
 }
 
 .profile-container .user-profile-tabs {
-    box-shadow: 0 1px 0 0 #0C707870;
+    box-shadow: 0 1px 0 0 #a7564470;
     display: flex;
     justify-content: space-between;
     width: auto;
@@ -99,21 +99,6 @@ li {
     list-style: none;
 }
 
-.profile-tab-links {
-    color: #6BA2A9;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 600;
-    align-items: center;
-    display: flex;
-    padding: 0 15px 20px;
-    white-space: nowrap;
-}
-
-.profile-container .user-profile-tabs li.settings {
-    margin-left: auto;
-
-}
 
 .profile-container .user-profile-tabs li {
     align-items: center;
@@ -122,22 +107,28 @@ li {
     position: relative;
 }
 
-.profile-container .user-profile-tabs li:last-of-type a {
-    padding-right: 0;
-    color: #6BA2A9;
+.profile-container .user-profile-tabs li .profile-tab-links-follow-settings.active {
+    color: #a75644;
+    box-shadow: 0 5px 0 0 #a75644;
 }
+
 
 .profile-container .user-profile-tabs li a {
     align-items: center;
-    display: flex;
     font-weight: 700;
     padding: 0 15px 20px;
     white-space: nowrap;
+    color: #6BA2A9;
     text-decoration: none;
+    font-size: 1.2rem;
+    display: flex;
+
+
 }
 
+
 .profile-container .user-profile-tabs li a:hover {
-    color: #0C7078;
+    color: #a75644;
 }
 
 
@@ -146,7 +137,7 @@ li {
 }
 
 .user-profile-settings .user-profile-settings-tabs {
-    border-right: 1px solid #0C707870;
+    border-right: 1px solid #a7564470;
     display: flex;
     flex-direction: column;
     margin: -15px 60px -15px -15px;
@@ -162,12 +153,30 @@ li {
     align-items: center;
     display: flex;
     overflow: hidden;
+    font-weight: 700;
+    padding: 0 15px 20px;
+    white-space: nowrap;
+    color: #6BA2A9;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-align: left;
 }
 
 .user-profile-settings .user-profile-settings-tabs li a:hover {
-    color: #0C7078;
+    color: #a75644;
+
+    .lines .title {
+        color: #a75644;
+    }
 }
 
+.user-profile-settings .user-profile-settings-tabs li a.active {
+    color: #a75644;
+
+    .lines .title {
+        color: #a75644;
+    }
+}
 
 .user-profile-settings .user-profile-settings-tabs li a .lines {
     display: flex;
@@ -191,10 +200,10 @@ li {
     white-space: nowrap;
 }
 
-.user-profile-settings .user-profile-settings-tabs li a .lines .title:hover {
+.user-profile-settings .user-profile-settings-tabs li a .lines span:not(.title) {
     color: #0C7078;
 }
 
-.user-profile-settings .user-profile-settings-tabs li a .lines span:not(.title) {
-    color: #0C7078;
+.separator {
+    height: 60px;
 }

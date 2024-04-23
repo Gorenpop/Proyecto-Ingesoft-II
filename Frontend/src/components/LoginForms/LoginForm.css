@@ -1,3 +1,15 @@
+.wrapper-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
 .wrapper {
     width: 420px;
     background: #05161A;
@@ -7,6 +19,9 @@
     color: #ffff;
     border-radius: 10px;
     padding: 30px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .wrapper h1 {

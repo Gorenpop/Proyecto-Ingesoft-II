@@ -9,6 +9,7 @@
 
 .navbar-logo {
     font-size: 2rem;
+    color: #072E33;
 }
 
 .logoContainer img {
@@ -90,7 +91,7 @@ button:hover {
     display: none;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1300px) {
     .NavbarItems {
         height: 20px;
         z-index: 100;

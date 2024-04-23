@@ -1,12 +1,19 @@
 import Navbar from '../pages/Navbar';
+import Hero from '../pages/Hero';
+import compostarImg from "../img/assets/4.jpg";
+import './compostarStyles.css';
+
 
 function Nosotros() {
     return (
         <>
             <Navbar />
-            <div className='pageContainer'>
-                <h1>pagina de nosotros</h1>
-            </div>
+            <Hero
+                cName="hero"
+                heroImg={compostarImg}
+                title="Nosotros"
+                paragraph="Conoce al equipo de Compostify"
+            />
         </>
     )
 }

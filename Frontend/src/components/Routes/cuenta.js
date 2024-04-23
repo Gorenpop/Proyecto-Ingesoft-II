@@ -7,11 +7,13 @@ import React, { useState } from 'react';
 
 function Cuenta() {
     // Define state using useState hook
-    const [clicked, setClicked] = useState(false);
-
-    // Define handleClick function
-    const handleClick = () => {
-        setClicked(!clicked);
+    const [clicked1, setClicked1] = useState(true);
+    const handleClick1 = () => {
+        setClicked1(!clicked1);
+    };
+    const [clicked2, setClicked2] = useState(false);
+    const handleClick2 = () => {
+        setClicked2(!clicked2);
     };
     return (
         <>
@@ -24,10 +26,8 @@ function Cuenta() {
                                 <div className='avatar-panel'>
                                     <div className='user-avatar own'>
                                         <a className="avatar">
-                                            {/*falta codigo aqui*/}
                                             <img src={avatar} alt="Logo" className="ig-avatar" loading="lazy" onload="lazyLoadImage(this)"></img>
                                         </a>
-                                        {/*}::after*/}
                                     </div>
                                     <div className="user-links">
                                         <div className='item title'>
@@ -40,32 +40,26 @@ function Cuenta() {
                                 </div>
                             </div>
                             <div className='separator'></div>
-                            <ul className="user-profile-tabs">
+                            <ul className="user-profile-tabs" >
                                 <i className="fa-solid fa-chevron-right"></i>
                                 {ProfileTabsItems.map((item, index) => {
                                     return (
-                                        <li key={index}>
-                                            <Link className={item.cName} to={item.url}>
+                                        <li key={index} onClick={handleClick1}>
+                                            <Link className={clicked1 ? item.cNameActive : item.cName} to={item.url}>
+                                                <i className={item.icon}></i>
                                                 {item.title}
                                             </Link>
                                         </li>
                                     );
                                 })}
-                                <li className="settings">
-                                    <Link className='user-link active' to='/my-account'>
-                                        <i className="fa-solid fa-gear"></i>
-                                        Configuración
-                                        {/*::after*/}
-                                    </Link>
-                                </li>
                             </ul>
                             <div className="separator mobile"></div>
-                            <div className="user-profile-settings" onClick={handleClick}>
+                            <div className="user-profile-settings" >
                                 <ul className="user-profile-settings-tabs">
                                     {profileConfigItems.map((item, index) => {
                                         return (
-                                            <li key={index}>
-                                                <Link className={clicked ? item.cNameActive : item.cName} to={item.url}>
+                                            <li key={index} onClick={handleClick2}>
+                                                <Link className={clicked2 ? item.cNameActive : item.cName} to={item.url}>
                                                     <i className={item.icon}></i>
                                                     <div className="lines">
                                                         <span class="title">{item.title}</span>
@@ -76,8 +70,8 @@ function Cuenta() {
                                             </li>
                                         );
                                     })}
-
                                 </ul>
+                                <div className="separator"></div>
                             </div>
                         </div>
                     </div>
