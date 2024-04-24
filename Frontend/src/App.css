@@ -24,3 +24,11 @@ body {
     padding: 0;
     position: relative;
 }
+
+li {
+    list-style: none;
+}
+
+span {
+    font-size: x-small;
+}

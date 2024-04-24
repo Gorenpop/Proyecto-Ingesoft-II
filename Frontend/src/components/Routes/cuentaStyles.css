@@ -8,6 +8,10 @@
 
 }
 
+
+
+/* contenedor de perfil */
+
 .profile-container {
     align-self: center;
     display: flex;
@@ -83,8 +87,13 @@
     height: 60px;
 }
 
-.profile-container .user-profile-tabs .fa-solid {
+
+
+/* tabs de usuario */
+
+.profile-container .user-profile-tabs .fa-solid.fa-chevron-right {
     margin-top: 2px;
+    color: #6BA2A9;
 }
 
 .profile-container .user-profile-tabs {
@@ -92,11 +101,6 @@
     display: flex;
     justify-content: space-between;
     width: auto;
-
-}
-
-li {
-    list-style: none;
 }
 
 
@@ -107,9 +111,11 @@ li {
     position: relative;
 }
 
-.profile-container .user-profile-tabs li .profile-tab-links-follow-settings.active {
+
+.profile-container .user-profile-tabs li a.active {
     color: #a75644;
     box-shadow: 0 5px 0 0 #a75644;
+
 }
 
 
@@ -127,21 +133,33 @@ li {
 }
 
 
+
+
+
 .profile-container .user-profile-tabs li a:hover {
     color: #a75644;
 }
 
+
+
+/* tabs de settings de usuario */
 
 .user-profile-settings {
     display: flex;
 }
 
 .user-profile-settings .user-profile-settings-tabs {
+    display: none;
+}
+
+.user-profile-settings .user-profile-settings-tabs.active {
     border-right: 1px solid #a7564470;
     display: flex;
     flex-direction: column;
     margin: -15px 60px -15px -15px;
+
 }
+
 
 .user-profile-settings .user-profile-settings-tabs li {
     margin: 15px;
@@ -187,6 +205,7 @@ li {
 
 .user-profile-settings .user-profile-settings-tabs li a .fa-solid {
     margin-right: 20px;
+
 }
 
 
@@ -206,4 +225,66 @@ li {
 
 .separator {
     height: 60px;
+}
+
+
+
+/* contenido de settings content */
+
+.user-profile-settings .settings-content {
+    width: 100%;
+}
+
+.avatar {
+    background-size: 100%;
+    display: flex;
+}
+
+.user-profile-settings .settings-content .tab-content-settings {
+    display: flex;
+    flex-direction: column;
+
+    .profile-info.active {
+        display: block;
+    }
+
+    .profile-info {
+        display: none;
+    }
+
+    .nickavatar {
+        display: flex;
+        margin: 15px;
+        margin-bottom: 0 !important;
+
+        .avatar-picture {
+            display: flex;
+            flex-direction: column;
+            margin-right: 30px;
+            width: 300px;
+
+            .ig-profile-avatar-edit {
+                align-items: center;
+                color: var(--color-light);
+                cursor: pointer;
+                display: flex;
+
+                .avatar img {
+                    width: 58px;
+                }
+            }
+        }
+
+
+    }
+
+    .settings-subtitle {
+        font-size: 19px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: left;
+    }
 }

@@ -28,11 +28,6 @@ select {
   padding: 10px 15px 10px 10px;
 }
 
-span {
-  display: block;
-  color: tomato;
-  font-size: x-small;
-}
 
 button {
   width: 100%;

@@ -6,15 +6,20 @@ import { ProfileTabsItems, profileConfigItems } from "./ProfileTabsItems";
 import React, { useState } from 'react';
 
 function Cuenta() {
-    // Define state using useState hook
-    const [clicked1, setClicked1] = useState(true);
-    const handleClick1 = () => {
-        setClicked1(!clicked1);
+    const [ProfileTabActiveTab, setProfileTabActive] = useState(4);
+    const handleProfileTab = (index) => {
+        if (ProfileTabActiveTab !== index) {
+            setProfileTabActive(index);
+        }
     };
-    const [clicked2, setClicked2] = useState(false);
-    const handleClick2 = () => {
-        setClicked2(!clicked2);
+    const [UserProfileSettingsActiveTab, setUserProfileSettingsActiveTab] = useState(0);
+    const handleUserProfileSettings = (index) => {
+        if (UserProfileSettingsActiveTab !== index) {
+            setUserProfileSettingsActiveTab(index);
+        }
     };
+
+
     return (
         <>
             <Navbar />
@@ -25,9 +30,9 @@ function Cuenta() {
                             <div className='main-panel'>
                                 <div className='avatar-panel'>
                                     <div className='user-avatar own'>
-                                        <a className="avatar">
-                                            <img src={avatar} alt="Logo" className="ig-avatar" loading="lazy" onload="lazyLoadImage(this)"></img>
-                                        </a>
+                                        <Link className="avatar">
+                                            <img src={avatar} alt="Logo" className="ig-avatar" ></img>
+                                        </Link>
                                     </div>
                                     <div className="user-links">
                                         <div className='item title'>
@@ -44,8 +49,9 @@ function Cuenta() {
                                 <i className="fa-solid fa-chevron-right"></i>
                                 {ProfileTabsItems.map((item, index) => {
                                     return (
-                                        <li key={index} onClick={handleClick1}>
-                                            <Link className={clicked1 ? item.cNameActive : item.cName} to={item.url}>
+                                        <li key={index} onClick={() => handleProfileTab(index)}>
+                                            <Link className={ProfileTabActiveTab === index ?
+                                                item.cNameActive : item.cName} to={item.url}>
                                                 <i className={item.icon}></i>
                                                 {item.title}
                                             </Link>
@@ -55,23 +61,45 @@ function Cuenta() {
                             </ul>
                             <div className="separator mobile"></div>
                             <div className="user-profile-settings" >
-                                <ul className="user-profile-settings-tabs">
-                                    {profileConfigItems.map((item, index) => {
-                                        return (
-                                            <li key={index} onClick={handleClick2}>
-                                                <Link className={clicked2 ? item.cNameActive : item.cName} to={item.url}>
-                                                    <i className={item.icon}></i>
-                                                    <div className="lines">
-                                                        <span class="title">{item.title}</span>
-                                                        <span>{item.content}</span>
-                                                    </div>
-                                                    <div className="fa-solid fa-chevron-right"></div>
-                                                </Link>
-                                            </li>
-                                        );
-                                    })}
+                                <ul className={ProfileTabActiveTab === 4 ?
+                                    "user-profile-settings-tabs active" : "user-profile-settings-tabs"} >
+                                    {
+                                        profileConfigItems.map((item, index) => {
+                                            return (
+                                                <li key={index} onClick={() => handleUserProfileSettings(index)}>
+                                                    <Link className={UserProfileSettingsActiveTab === index
+                                                        ? item.cNameActive : item.cName} to={item.url}>
+                                                        <i className={item.icon}></i>
+                                                        <div className="lines">
+                                                            <span class="title">{item.title}</span>
+                                                            <span>{item.content}</span>
+                                                        </div>
+                                                        <div className="fa-solid fa-chevron-right"></div>
+                                                    </Link>
+                                                </li>
+                                            );
+                                        })
+                                    }
                                 </ul>
                                 <div className="separator"></div>
+                                <div className="settings-content">
+                                    <div className="tab-content-settings">
+                                        <div className={UserProfileSettingsActiveTab === 1 && ProfileTabActiveTab === 4 ?
+                                            "profile-info active" : "profile-info"}>
+                                            <div className="nickavatar">
+                                                <div className="avatar-picture">
+                                                    <span className="settings-subtitle">Foto de perfil</span>
+                                                    <div className="ig-profile-avatar-edit">
+                                                        <Link className="avatar">
+                                                            <img src={avatar} alt="Logo" className="ig-avatar" ></img>
+
+                                                        </Link>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
